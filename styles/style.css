@@ -36,11 +36,6 @@ a {
 	text-decoration: none;
 	color: black;
 }
-
-ul li {
-	display: inline;
-}
-
 /*---------------------------------------------------------------------------------
    Header Styles
 ---------------------------------------------------------------------------------*/
@@ -57,12 +52,8 @@ nav ul li a {
 	color: #fff;
 }
 
-nav ul li:first-child {
+nav ul li {
 	float: left;
-}
-
-nav ul li:last-child {
-	float: right;
 }
 
 nav li a:hover {
@@ -101,16 +92,71 @@ Instruction Overlay and Quiz Module
 ---------------------------------------------------------------------------------*/
 /*style for hidden modal*/
 .overlay {
-	width: 100%;
-	height: 100%;
+	width: 70%;
+	height: 60%;
 	color: #fff;
-	background: #000;
+	background: url("../images/redkeep.jpg") center no-repeat;
 	position: absolute;
 	top: 0;
 	left: 0;
-	margin: 0;
+	margin: 10% 10% 10% 15%;
 	z-index: 1000;
 	display: none;
+}
+
+.overlay h3 {
+	color: #ff0000;
+	font-size: 2em;
+	text-align: center;
+	margin-bottom: 2%;
+	text-shadow: #000 0.1em 0.1em 0.2em;
+}
+
+.instruction-header {
+	display: block;
+	width: 700px;
+	text-align: center;
+	margin: 0 auto;
+	font-size: 1.2em;
+	margin-bottom: 2%;
+	text-shadow: #000 0.1em 0.1em 0.2em;
+}
+
+.instruction-list {
+	text-align: justify;
+	width: 600px;
+	margin: 0 auto;
+}
+
+.instruction-list li {
+	margin: 0 auto;
+	list-style-type: disc;
+	font-size: 1.2em;
+	text-shadow: #000 0.1em 0.1em 0.2em;
+}
+
+.instruction-footer {
+	margin-top: 2%;
+	font-size: 1.2em;
+	font-weight: bold;
+	color: #ff0000;
+	text-shadow: #000 0.1em 0.1em 0.2em;
+}
+
+.close-button {
+	background: #000;
+	border: 2px solid #ff0000;
+	display: block;
+	font-size: 1em;
+	padding: .5em;
+	width: 200px;
+	border-radius: 5px;
+	color: #fff;
+	margin: 2% auto 0 auto;
+}
+
+.close-button:active {
+	background: #ff0000;
 }
 
 .quiz-container {
