@@ -10,7 +10,8 @@ var questions = [{
     correct : 3,
 }];
 	//(THE GAME)======================================== Question 1 of 7 appears and the user can begin quiz starting with Question number 1 and possible answers showing.
-	$("#startButton").click(function(){
+	$("#start-button").click(function(e){
+		e.preventDefault();
 		$(".quiz-container").fadeIn(500);
 	});
 //when choice is highlighted and submit is clicked
