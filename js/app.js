@@ -16,7 +16,7 @@ var questions = [{
 		$(".quiz-container").fadeIn(500);
 		$(".start-screen").hide();
 	});
-//highlight choice and click submit.
+//when choice is highlighted and submit is clicked
 	//$("#submit").click(function(){
 	//if() {}
 	//});
