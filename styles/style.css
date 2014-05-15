@@ -66,7 +66,14 @@ nav li a:hover {
 
 h1 {
 	font-weight: 900;
-	font-size: 3.9em;
+	font-size: 4em;
+	color: #fff;
+	text-shadow: #ff0000 0.1em 0.1em 0.2em;
+}
+
+h2 {
+	font-weight: 900;
+	font-size: 2.5em;
 	padding: 0.8em;
 	color: #fff;
 	text-shadow: #000 0.1em 0.1em 0.2em;
@@ -119,7 +126,7 @@ Quiz Module
 
 .quiz {
 	display: block;
-	margin-top: 9%;
+	margin-top: 7%;
 	vertical-align: middle;
 	text-align: center;
 }
@@ -169,7 +176,7 @@ Quiz Module
 }
 
 .score-container {
-	margin-top: 2%;
+	margin-top: 1%;
 }
 
 .score-container p {
@@ -242,16 +249,35 @@ Overlay Pop-Ups: instruction, correct/incorrect/final
 	text-shadow: #000 0.1em 0.1em 0.2em;
 }
 
-.correct-overlay {
+.same {
+	width: 70%;
+	height: 80%;
+	position: absolute;
+	top: 3%;
+	left: 5%;
 	display: none;
 }
 
-.incorrect-overlay {
-	display: none;
+.same h3 {
+	margin-top: 14%;
 }
 
-.final-overlay {
-	display: none;
+.same p {
+	font-size: 1.4em;
+	text-shadow: #000 0.1em 0.1em 0.2em;
+	text-align: center;
+}
+
+.next-button {
+	background: #000;
+	border: 2px solid #ff0000;
+	display: block;
+	font-size: 1.2em;
+	padding: .7em;
+	width: 200px;
+	border-radius: 5px;
+	color: #fff;
+	margin: 4% auto 0 auto;
 }
 
 .instruction-header {
@@ -304,31 +330,36 @@ Overlay Pop-Ups: instruction, correct/incorrect/final
 .same {
 	width: 60%;
 	height: 50%;
-	background: url('../images/mochaGrunge.png');
+	background: url('../images/real_cf.png');
 }
 
 /*---------------------------------------------------------------------------------
 End Screens
 ---------------------------------------------------------------------------------*/
 
-.moon-door {
-	color: #fff;
+.fate {
 	display: none;
 }
 
-.nights-watch {
-	color: #fff;
-	display: none;
+.fate h3 {
+	color: #ff0000;
+	font-size: 2.4em;
+	margin-top: 2%;
+	text-align: center;
+	text-shadow: #000 0.1em 0.1em 0.2em;
 }
 
-.kingsguard {
+.fate p {
 	color: #fff;
-	display: none;
+	margin-top: 2%;
+	color: #fff;
+	font-size: 2.2em;
+	text-align: center;
+	text-shadow: #000 0.1em 0.1em 0.2em;
 }
 
-.winner {
-	color: #fff;
-	display: none;
+.win {
+	color: yellow;
 }
 
 .fate1 {
@@ -344,5 +375,5 @@ End Screens
 }
 
 .fate4 {
-	background: url('../images/throne-winner.jpg') top right no-repeat;
+	background: url('../images/throne-winner.jpg') top center no-repeat;
 }
