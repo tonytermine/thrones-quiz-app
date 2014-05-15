@@ -46,18 +46,15 @@ nav {
 }
 
 nav ul li a {
-	text-transform: uppercase;
+	text-transform: uppercase;;
 	font-weight: 700;
-	font-size: 1.2em;
+	font-size: 1.4em;
 	color: #fff;
+	text-shadow: #ff0000 0.1em 0.1em 0.2em;
 }
 
 nav ul li {
 	float: left;
-}
-
-nav ul li:last-child {
-	float: right;
 }
 
 nav li a:hover {
@@ -65,28 +62,31 @@ nav li a:hover {
 }
 
 h1 {
-	font-weight: 900;
-	font-size: 4em;
+	font-weight: bolder;
+	font-size: 4.5em;
 	color: #fff;
 	text-shadow: #ff0000 0.1em 0.1em 0.2em;
+
 }
 
 h2 {
 	font-weight: 900;
-	font-size: 2.5em;
+	font-size: 1.7em;
 	padding: 0.8em;
 	color: #fff;
 	text-shadow: #000 0.1em 0.1em 0.2em;
+	font-family: 'Press Start 2P', cursive;
 }
 
 #start-button {
 	background: #000;
 	border: 2px solid #ff0000;
 	font-size: 1.5em;
-	padding: 1em;
+	font-family: 'Press Start 2P', cursive;
+	padding: 1.1em;
 	border-radius: 5px;
 	color: #fff;
-	width: 300px;
+	width: 200px;
 	margin-top: 10%;
 }
 
@@ -124,6 +124,34 @@ Quiz Module
 	margin: 2% 0 0 3%;
 }
 
+.new {
+	font-family: 'Press Start 2P', cursive;
+	font-size: 1.2em;
+	font-weight: bold;
+	color: #fff;
+	float: right;
+	background: #000;
+	border: 2px solid #ff0000;
+	display: block;
+	padding: .6em;
+	margin: 1.9% 2% 0 0;
+	width: 200px;
+	border-radius: 5px;
+	text-transform: uppercase;
+}
+
+.new:active {
+	background: #ff0000;
+}
+
+.new:focus {
+	outline: none;
+}
+
+#center {
+	margin: 2% 42% 0 0;
+}
+
 .quiz {
 	display: block;
 	margin-top: 7%;
@@ -159,12 +187,14 @@ Quiz Module
 .submit {
 	background: #000;
 	border: 2px solid #ff0000;
-	font-size: 1.5em;
+	font-size: 1.2em;
+	font-family: 'Press Start 2P', cursive;
 	padding: 0.7em;
 	border-radius: 5px;
 	color: #fff;
 	width: 300px;
 	margin-top: 5%;
+	text-transform: uppercase;
 }
 
 .submit:active {
@@ -253,7 +283,7 @@ Overlay Pop-Ups: instruction, correct/incorrect/final
 	width: 70%;
 	height: 80%;
 	position: absolute;
-	top: 3%;
+	top: 1%;
 	left: 5%;
 	display: none;
 }
@@ -272,12 +302,22 @@ Overlay Pop-Ups: instruction, correct/incorrect/final
 	background: #000;
 	border: 2px solid #ff0000;
 	display: block;
-	font-size: 1.2em;
+	font-size: 1em;
+	font-family: 'Press Start 2P', cursive;
 	padding: .7em;
 	width: 200px;
 	border-radius: 5px;
 	color: #fff;
 	margin: 4% auto 0 auto;
+	text-transform: uppercase;
+}
+
+.next-button:active {
+	background: #ff0000;
+}
+
+.next-button:focus {
+	outline: none;
 }
 
 .instruction-header {
