@@ -16,13 +16,17 @@ var questionCounter = 0;
 	});
 //allow user to highlight and store choice so they can submit it.===============================================
 	$(".answer").click(function(e) {
-	$(".answer").removeClass("userChoice");
-	$(this).addClass("userChoice");
+		$(".answer").removeClass("userChoice");
+		$(this).addClass("userChoice");
 	});
-//when user clicks submit button show whether the user's answer was correct or not================================
+//when user clicks submit button show whether the user's answer was correct or not and ALERT for empty answers====
 	$(".submit1").click(function(e){
 		var userInput = $(".userChoice");
 		e.preventDefault();
+		if(userInput.length == 0) {
+			alert("You must click on an answer before you can submit!");
+			return false;
+		}
 		if(userInput.hasClass("correct")) {
 			$(".correct-overlay").fadeIn(500);
 			$(".next-button").hide();
@@ -33,11 +37,12 @@ var questionCounter = 0;
 			$(".incorrect-overlay").fadeIn(500);
 			$(".next-button").hide();
 			$(".next1").show();
-		}
+			}
 	});
 //Question 2: When user presses next question bring up the next question in order and increase the question counter.
 	$(".next1").click(function(e) {
 		e.preventDefault();
+		$(".answer").removeClass("userChoice");
 		$(".correct-overlay").fadeOut(500);
 		$(".incorrect-overlay").fadeOut(500);
 		$(".quiz-container").addClass("picture2");
@@ -54,6 +59,10 @@ var questionCounter = 0;
 	$(".submit2").click(function(e){
 		e.preventDefault();
 		var userInput = $(".userChoice");
+		if(userInput.length == 0) {
+			alert("You must click on an answer before you can submit!");
+			return false;
+		}
 		if(userInput.hasClass("correct")) {
 			$(".correct-overlay").fadeIn(500);
 			$(".next-button").hide();
@@ -70,6 +79,7 @@ var questionCounter = 0;
 //Question 3: When user presses next question bring up the next question in order and increase the question counter.
 	$(".next2").click(function(e) {
 		e.preventDefault();
+		$(".answer").removeClass("userChoice");
 		$(".correct-overlay").fadeOut(500);
 		$(".incorrect-overlay").fadeOut(500);
 		$(".quiz-container").addClass("picture3");
@@ -86,6 +96,10 @@ var questionCounter = 0;
 	$(".submit3").click(function(e){
 		e.preventDefault();
 		var userInput = $(".userChoice");
+		if(userInput.length == 0) {
+			alert("You must click on an answer before you can submit!");
+			return false;
+		}
 		if(userInput.hasClass("correct")) {
 			$(".correct-overlay").fadeIn(500);
 			$(".next-button").hide();
@@ -102,6 +116,7 @@ var questionCounter = 0;
 //Question 4: When user presses next question bring up the next question in order and increase the question counter.
 	$(".next3").click(function(e) {
 		e.preventDefault();
+		$(".answer").removeClass("userChoice");
 		$(".correct-overlay").fadeOut(500);
 		$(".incorrect-overlay").fadeOut(500);
 		$(".quiz-container").addClass("picture4");
@@ -118,6 +133,10 @@ var questionCounter = 0;
 	$(".submit4").click(function(e){
 		e.preventDefault();
 		var userInput = $(".userChoice");
+		if(userInput.length == 0) {
+			alert("You must click on an answer before you can submit!");
+			return false;
+		}
 		if(userInput.hasClass("correct")) {
 			$(".correct-overlay").fadeIn(500);
 			$(".next-button").hide();
@@ -134,6 +153,7 @@ var questionCounter = 0;
 //Question 5: When user presses next question bring up the next question in order and increase the question counter.
 	$(".next4").click(function(e) {
 		e.preventDefault();
+		$(".answer").removeClass("userChoice");
 		$(".correct-overlay").fadeOut(500);
 		$(".incorrect-overlay").fadeOut(500);
 		$(".quiz-container").addClass("picture5");
@@ -150,6 +170,10 @@ var questionCounter = 0;
 	$(".submit5").click(function(e){
 		e.preventDefault();
 		var userInput = $(".userChoice");
+		if(userInput.length == 0) {
+			alert("You must click on an answer before you can submit!");
+			return false;
+		}
 		if(userInput.hasClass("correct")) {
 			$(".correct-overlay").fadeIn(500);
 			$(".next-button").hide();
@@ -166,6 +190,7 @@ var questionCounter = 0;
 //Question 6: When user presses next question bring up the next question in order and increase the question counter.
 	$(".next5").click(function(e) {
 		e.preventDefault();
+		$(".answer").removeClass("userChoice");
 		$(".correct-overlay").fadeOut(500);
 		$(".incorrect-overlay").fadeOut(500);
 		$(".quiz-container").addClass("picture6");
@@ -182,6 +207,10 @@ var questionCounter = 0;
 	$(".submit6").click(function(e){
 		e.preventDefault();
 		var userInput = $(".userChoice");
+		if(userInput.length == 0) {
+			alert("You must click on an answer before you can submit!");
+			return false;
+		}
 		if(userInput.hasClass("correct")) {
 			$(".correct-overlay").fadeIn(500);
 			$(".next-button").hide();
@@ -198,6 +227,7 @@ var questionCounter = 0;
 //Question 7: When user presses next question bring up the next question in order and increase the question counter.
 	$(".next6").click(function(e) {
 		e.preventDefault();
+		$(".answer").removeClass("userChoice");
 		$(".correct-overlay").fadeOut(500);
 		$(".incorrect-overlay").fadeOut(500);
 		$(".quiz-container").addClass("picture7");
@@ -214,6 +244,10 @@ var questionCounter = 0;
 	$(".submit7").click(function(e){
 		e.preventDefault();
 		var userInput = $(".userChoice");
+		if(userInput.length == 0) {
+			alert("You must click on an answer before you can submit!");
+			return false;
+		}
 		if(userInput.hasClass("correct")) {
 			$(".correct-overlay").fadeIn(500);
 			$(".next-button").hide();
@@ -230,6 +264,7 @@ var questionCounter = 0;
 //Final Tally: When user presses next question bring up the next question in order and increase the question counter.
 	$(".next7").click(function(e) {
 		e.preventDefault();
+		$(".answer").removeClass("userChoice");
 		$(".correct-overlay").fadeOut(500);
 		$(".incorrect-overlay").fadeOut(500);
 		$(".quiz-container").addClass("picture8");
@@ -283,17 +318,6 @@ var questionCounter = 0;
 	});
 
 //(NEW GAME button) =================================
-//when clicked; start a new game by resetting the score and question count.  Generate a new random set of questions and reset screen back to first question and possible answers.
-	// $(".new").click(function(e){
-		// e.preventDefault();
-		// $(".quiz-container").fadeIn(500);
-		// $(".question").hide();
-		// $(".choices").hide();
-		// $(".submit").hide();
-		// $(".q-one").show();
-		// $(".one").show();
-		// $(".submit1").show();
-	// });
 	$(".new").click(function(){
   window.location.reload();
 	});
