@@ -6,14 +6,13 @@
 		<meta charset="utf-8"/>
 		<!-- Stylesheets -->
 		<link rel="stylesheet" href="styles/reset.css">
-		<link href='http://fonts.googleapis.com/css?family=Lato:400,700,900,900italic' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Lato|Press+Start+2P' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="styles/style.css"/>
 	</head>
 	<body>
 		<nav>
 			<ul class="clearfix">
 				<li><a class="what" href="#">Instructions</a></li>
-				<li><a class="new" href="#">Reset Game</a></li>
 			</ul>
 		</nav><!-- end nav -->
 			<!-- Modal Information Box -->
@@ -35,40 +34,41 @@
 			<h1>Game of Thrones</h1>
 			<h2>Interactive Quiz Game</h2>
 			<form>
-      	<input type="submit" id="start-button" class="button" name="submit" value="Play The Game"/>
+      	<input type="submit" id="start-button" class="button" name="submit" value="PLAY"/>
 			</form>
 		</div><!-- end Starting Screen -->
 		<!-- Quiz Screen -->
 		<div class="quiz-container">
 			<!-- 1-2 Correct Screen -->
 			<div class="moon-door fate">
-				<h3>Because You Only Got <span class="correct-score"></span> question(s) right.</h3>
+				<h3>Because You Only Got <span class="correct-score"></span> Question(s) Right.</h3>
 				<p>You lost your trial by combat and have been thrown out of the moon door.</p>
 				<p>Try harder next time...</p>
-				<a class="new next-button" href="#">New Game</a>
+				<a class="new next-button" id="center" href="#">New Game</a>
 			</div>
 			<!-- 3-4 Correct Screen -->
 			<div class="nights-watch fate">
-				<h3>Because You Only Got <span class="correct-score"></span> question(s) right.</h3>
+				<h3>Because You Only Got <span class="correct-score"></span> Question(s) Right.</h3>
 				<p>Your rebellion didn't go over to well.  You are forced to take the Black and join the Night's Watch.</p>
 				<p>And Now Your Watch Begins...</p>
 				<p>Try Again!</p>
-				<a class="new next-button" href="#">New Game</a>
+				<a class="new next-button" id="center" href="#">New Game</a>
 			</div>
 			<!-- 5-6 Correct Screen -->
 			<div class="kingsguard fate">
-				<h3>Because You Got <span class="correct-score"></span> question(s) right.</h3>
+				<h3>Because You Got <span class="correct-score"></span> Question(s) Right.</h3>
 				<p>You managed to make a name for yourself.  You have been knighted and appointed to the Kingsguard!</p>
 				<p>Victory was in your grasp...Try Again!</p>
-				<a class="new next-button" href="#">New Game</a>
+				<a class="new next-button" id="center" href="#">New Game</a>
 			</div>
 			<!-- Winner Screen -->
 			<div class="winner fate">
-				<h3><span class="win">Congratulations!</span> You Got All 7 Questions Correct and have United The 7 Kingdoms!!.</h3>
+				<h3><span class="win">Congratulations!</span> You Got All 7 Questions Correct and United The 7 Kingdoms!!.</h3>
 				<p>You Have Won The Right To Sit On The Iron Throne!</p>
-				<a class="new next-button" href="#">New Game</a>
+				<a class="new next-button" id="center" href="#">New Game</a>
 			</div>
 			<p class="question-count">Question #<span class="counter">1</span> of 7:</p>
+			<a class="new" href="#">Reset</a>
 			<form class="quiz">
 				<p class="question q-one">What are the words of House Stark?</p>
 					<ul class="choices one">
@@ -77,7 +77,7 @@
 						<li><input type="button" class="answer correct" value="Winter Is Coming"/></li>
 						<li><input type="button" class="answer" value="Our's Is the Fury"/></li>
 				  </ul>
-				  <input type="button" class="submit submit1" value="Submit Answer">
+				  <input type="button" class="submit submit1" value="Submit">
 				<p class="question q-two">What is the name of ancestral Valyrian sword given to Jon Snow?</p>
 					<ul class="choices two">
 						<li><input type="button" class="answer" value="Ice"/></li>
@@ -85,7 +85,7 @@
 						<li><input type="button" class="answer" value="Oathkeeper"/></li>
 						<li><input type="button" class="answer" value="Widow's Wail"/></li>
 				  </ul>
-				  <input type="button" class="submit submit2" value="Submit Answer">
+				  <input type="button" class="submit submit2" value="Submit">
 				<p class="question q-three">Which king was commonly referred to as the "Mad King"?</p>
 					<ul class="choices three">
 						<li><input type="button" class="answer" value="Robert Baratheon"/></li>
@@ -93,7 +93,7 @@
 						<li><input type="button" class="answer correct" value="Aerys II Targaryen"/></li>
 						<li><input type="button" class="answer" value="Tywin Lannister"/></li>
 				  </ul>
-				  <input type="button" class="submit submit3" value="Submit Answer">
+				  <input type="button" class="submit submit3" value="Submit">
 				<p class="question q-four">What is the southern-most region of Westeros?</p>
 					<ul class="choices four">
 						<li><input type="button" class="answer correct" value="Dorne"/></li>
@@ -101,7 +101,7 @@
 						<li><input type="button" class="answer" value="The Stormlands"/></li>
 						<li><input type="button" class="answer" value="The Vale"/></li>
 				  </ul>
-				  <input type="button" class="submit submit4" value="Submit Answer">
+				  <input type="button" class="submit submit4" value="Submit">
 				<p class="question q-five">What is the impregnable castle located in the Vale called?</p>
 					<ul class="choices five">
 						<li><input type="button" class="answer" value="The Dreadfort"/></li>
@@ -109,7 +109,7 @@
 						<li><input type="button" class="answer" value="Red Keep"/></li>
 						<li><input type="button" class="answer correct" value="The Eyrie"/></li>
 				  </ul>
-				  <input type="button" class="submit submit5" value="Submit Answer">
+				  <input type="button" class="submit submit5" value="Submit">
 				<p class="question q-six">Which is NOT one of the names of Daenerys Targaryen's dragons?</p>
 					<ul class="choices six">
 						<li><input type="button" class="answer wrong" value="Drogon"/></li>
@@ -117,7 +117,7 @@
 						<li><input type="button" class="answer wrong" value="Viserion"/></li>
 						<li><input type="button" class="answer wrong" value="Rhaegal"/></li>
 				  </ul>
-				  <input type="button" class="submit submit6" value="Submit Answer">
+				  <input type="button" class="submit submit6" value="Submit">
 				<p class="question q-seven">What group is tasked with protecting Westeros from invasion beyond the Wall and the mythical "White Walkers"?</p>
 					<ul class="choices seven">
 						<li><input type="button" class="answer" value="The Kingsgaurd"/></li>
@@ -125,7 +125,7 @@
 						<li><input type="button" class="answer correct" value="The Night's Watch"/></li>
 						<li><input type="button" class="answer" value="The City Watch"/></li>
 				  </ul>
-					<input type="button" class="submit submit7" value="Submit Answer">
+					<input type="button" class="submit submit7" value="Submit">
 			</form><!-- end quiz -->
 			<div class="score-container">
 				<p>Kingdom's Conquered</p>
@@ -142,31 +142,31 @@
 		<div class="correct-overlay overlay same">
 			<h3>Correct!</h3>
 			<p>You Have Conquered One of the 7 Kingdom's!</p>
-			<input type="button" class="next-button next1" value="Next Question">
-			<input type="button" class="next-button next2" value="Next Question">
-			<input type="button" class="next-button next3" value="Next Question">
-			<input type="button" class="next-button next4" value="Next Question">
-			<input type="button" class="next-button next5" value="Next Question">
-			<input type="button" class="next-button next6" value="Next Question">
-			<input type="button" class="next-button next7" value="Total Your Score!">
+			<input type="button" class="next-button next1" value="Next">
+			<input type="button" class="next-button next2" value="Next">
+			<input type="button" class="next-button next3" value="Next">
+			<input type="button" class="next-button next4" value="Next">
+			<input type="button" class="next-button next5" value="Next">
+			<input type="button" class="next-button next6" value="Next">
+			<input type="button" class="next-button next7" value="Score Total">
 		</div>
 		<!-- Incorrect Modal -->
 		<div class="incorrect-overlay overlay same">
 			<h3>Wrong!</h3>
 			<p>This Battle is Lost... But Keep Going!</p>
-			<input type="button" class="next-button next1" value="Next Question">
-			<input type="button" class="next-button next2" value="Next Question">
-			<input type="button" class="next-button next3" value="Next Question">
-			<input type="button" class="next-button next4" value="Next Question">
-			<input type="button" class="next-button next5" value="Next Question">
-			<input type="button" class="next-button next6" value="Next Question">
-			<input type="button" class="next-button next7" value="Total Your Score!">
+			<input type="button" class="next-button next1" value="Next">
+			<input type="button" class="next-button next2" value="Next">
+			<input type="button" class="next-button next3" value="Next">
+			<input type="button" class="next-button next4" value="Next">
+			<input type="button" class="next-button next5" value="Next">
+			<input type="button" class="next-button next6" value="Next">
+			<input type="button" class="next-button next7" value="Score Total">
 		</div>
 		<!-- Final Modal -->
 		<div class="final-overlay overlay same">
 			<h3>Final Score</h3>
 			<p>You got a total of <span class="correct-score"></span> correct answer(s). Your future awaits ahead...</p>
-			<input type="button" class="next-button finish-button" value="Reveal Fate!">
+			<input type="button" class="next-button finish-button" value="Show Fate!">
 		<!-- JavaScript -->
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 		<script type="text/javascript" src="js/app.js"></script>

@@ -250,29 +250,33 @@ var questionCounter = 0;
 		if(correctScore <= 2) {
 			$(".final-overlay").fadeOut(500);
 			$(".finish-button").hide();
+			$(".new").hide();
 			$(".score-container").show();
-			$(".new").show();
+			$(".next-button").show();
 			$(".quiz-container").addClass("fate1");
 			$(".moon-door").fadeIn(500);
 		} else if(correctScore <= 4)  {
 			$(".final-overlay").fadeOut(500);
 			$(".finish-button").hide();
+			$(".new").hide();
 			$(".score-container").show();
-			$(".new").show();
+			$(".next-button").show();
 			$(".quiz-container").addClass("fate2");
 			$(".nights-watch").fadeIn(500);
 		} else if(correctScore <= 6)  {
 			$(".final-overlay").fadeOut(500);
 			$(".finish-button").hide();
+			$(".new").hide();
 		  $(".score-container").show();
-		  $(".new").show();
+		  $(".next-button").show();
 			$(".quiz-container").addClass("fate3");
 			$(".kingsguard").fadeIn(500);
 		} else if(correctScore == 7)  {
 			$(".final-overlay").fadeOut(500);
 			$(".finish-button").hide();
+			$(".new").hide();
 			$(".score-container").show();
-			$(".new").show();
+			$(".next-button").show();
 			$(".quiz-container").addClass("fate4");
 			$(".winner").fadeIn(500);
 		}
@@ -280,15 +284,18 @@ var questionCounter = 0;
 
 //(NEW GAME button) =================================
 //when clicked; start a new game by resetting the score and question count.  Generate a new random set of questions and reset screen back to first question and possible answers.
-	$(".new").click(function(e){
-		e.preventDefault();
-		$(".quiz-container").fadeIn(500);
-		$(".question").hide();
-		$(".choices").hide();
-		$(".submit").hide();
-		$(".q-one").show();
-		$(".one").show();
-		$(".submit1").show();
+	// $(".new").click(function(e){
+		// e.preventDefault();
+		// $(".quiz-container").fadeIn(500);
+		// $(".question").hide();
+		// $(".choices").hide();
+		// $(".submit").hide();
+		// $(".q-one").show();
+		// $(".one").show();
+		// $(".submit1").show();
+	// });
+	$(".new").click(function(){
+  window.location.reload();
 	});
 
 
