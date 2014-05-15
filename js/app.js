@@ -239,6 +239,7 @@ var questionCounter = 0;
 		$(".choices").hide();
 		$(".submit").hide();
 		$(".next-button").hide();
+		$(".score-container").hide();
 		$(".finish-button").show();
 		$(".correct-score").text(correctScore);
 	});
@@ -249,21 +250,29 @@ var questionCounter = 0;
 		if(correctScore <= 2) {
 			$(".final-overlay").fadeOut(500);
 			$(".finish-button").hide();
+			$(".score-container").show();
+			$(".new").show();
 			$(".quiz-container").addClass("fate1");
 			$(".moon-door").fadeIn(500);
 		} else if(correctScore <= 4)  {
 			$(".final-overlay").fadeOut(500);
 			$(".finish-button").hide();
+			$(".score-container").show();
+			$(".new").show();
 			$(".quiz-container").addClass("fate2");
 			$(".nights-watch").fadeIn(500);
 		} else if(correctScore <= 6)  {
 			$(".final-overlay").fadeOut(500);
 			$(".finish-button").hide();
+		  $(".score-container").show();
+		  $(".new").show();
 			$(".quiz-container").addClass("fate3");
 			$(".kingsguard").fadeIn(500);
 		} else if(correctScore == 7)  {
 			$(".final-overlay").fadeOut(500);
 			$(".finish-button").hide();
+			$(".score-container").show();
+			$(".new").show();
 			$(".quiz-container").addClass("fate4");
 			$(".winner").fadeIn(500);
 		}
