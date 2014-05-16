@@ -18,8 +18,10 @@ var questionCounter = 0;
 	$(".answer").click(function(e) {
 		$(".answer").removeClass("userChoice");
 		$(this).addClass("userChoice");
+		$(".answer").css("background", "");
+		$(this).css("background", "#00A615");
 	});
-//when user clicks submit button show whether the user's answer was correct or not and ALERT for empty answers====
+//when user clicks submit button show whether the user's answer was correct or not and ALERT for empty answers========================================
 	$(".submit1").click(function(e){
 		var userInput = $(".userChoice");
 		e.preventDefault();
