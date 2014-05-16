@@ -21,8 +21,10 @@
 				<div>
 					<p class="instruction-header">Test your knowledge about the realm with the series of 7 random questions to unite the Seven Kingdoms of Westeros. Each question you answer correctly will successfully conquer a kingdom.</p>
 					<ul class="instruction-list">
-						<li>Select the correct answer by clicking on your choice and pressing the Submit Button.</li><br>
-						<li>You need to guess correctly on ALL 7 questions to successfully claim the Iron Throne.</li><br>
+						<li>Select the correct answer by clicking on your choice and pressing the Submit Button.</li>
+						<br>
+						<li>You need to guess correctly on ALL 7 questions to successfully claim the Iron Throne.</li>
+						<br>
 						<li>Choose wisely.  As your final score will determine a certain fate. Click New Game to try again.</li>
 						</ul>
 					<p class="instruction-footer">Are you ready to begin?</p>
@@ -44,7 +46,7 @@
 				<h3>Because You Only Got <span class="correct-score"></span> Question(s) Right.</h3>
 				<p>You lost your trial by combat and have been thrown out of the moon door.</p>
 				<p>Try harder next time...</p>
-				<a class="new next-button" id="center" href="#">New Game</a>
+				<a class="new next-button center" href="#">New Game</a>
 			</div>
 			<!-- 3-4 Correct Screen -->
 			<div class="nights-watch fate">
@@ -52,20 +54,20 @@
 				<p>Your rebellion didn't go over to well.  You are forced to take the Black and join the Night's Watch.</p>
 				<p>And Now Your Watch Begins...</p>
 				<p>Try Again!</p>
-				<a class="new next-button" id="center" href="#">New Game</a>
+				<a class="new next-button center" href="#">New Game</a>
 			</div>
 			<!-- 5-6 Correct Screen -->
 			<div class="kingsguard fate">
 				<h3>Because You Got <span class="correct-score"></span> Question(s) Right.</h3>
 				<p>You managed to make a name for yourself.  You have been knighted and appointed to the Kingsguard!</p>
 				<p>Victory was in your grasp...Try Again!</p>
-				<a class="new next-button" id="center" href="#">New Game</a>
+				<a class="new next-button center" href="#">New Game</a>
 			</div>
 			<!-- Winner Screen -->
 			<div class="winner fate">
 				<h3><span class="win">Congratulations!</span> You Got All 7 Questions Correct and United The 7 Kingdoms!!.</h3>
 				<p>You Have Won The Right To Sit On The Iron Throne!</p>
-				<a class="new next-button" id="center" href="#">New Game</a>
+				<a class="new next-button center" href="#">New Game</a>
 			</div>
 			<p class="question-count">Question #<span class="counter">1</span> of 7:</p>
 			<a class="new" href="#">Reset</a>
@@ -149,7 +151,7 @@
 			<input type="button" class="next-button next5" value="Next">
 			<input type="button" class="next-button next6" value="Next">
 			<input type="button" class="next-button next7" value="Score Total">
-		</div>
+		</div><!-- end correct overlay -->
 		<!-- Incorrect Modal -->
 		<div class="incorrect-overlay overlay same">
 			<h3>Wrong!</h3>
@@ -161,12 +163,13 @@
 			<input type="button" class="next-button next5" value="Next">
 			<input type="button" class="next-button next6" value="Next">
 			<input type="button" class="next-button next7" value="Score Total">
-		</div>
+		</div><!-- end incorrect overlay -->
 		<!-- Final Modal -->
 		<div class="final-overlay overlay same">
 			<h3>Final Score</h3>
 			<p>You got a total of <span class="correct-score"></span> correct answer(s). Your future awaits ahead...</p>
 			<input type="button" class="next-button finish-button" value="Show Fate!">
+		</div><!-- end final overlay -->
 		<!-- JavaScript -->
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 		<script type="text/javascript" src="js/app.js"></script>
