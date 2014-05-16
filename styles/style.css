@@ -179,6 +179,7 @@ Quiz Module
 	color: #fff;
 	height: 50px;
 }
+
 .answer:focus {
 	background: #00A615;
 	outline: none;
