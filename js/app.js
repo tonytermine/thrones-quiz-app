@@ -1,271 +1,127 @@
 $(document).ready(function() {
-//Global Variables=====================================
+//Global Variables========================================
 var correctScore = 0;
 var questionCounter = 0;
-//(THE GAME) Question 1 of 7 appears and the user can begin quiz starting with Question number 1 and possible answers showing.
-	$("#start-button").click(function(e){
-		e.preventDefault();
-		$(".quiz-container").fadeIn(500);
-		$(".quiz-container").addClass("picture1");
-		$(".question").hide();
-		$(".choices").hide();
-		$(".submit").hide();
-		$(".q-one").show();
-		$(".one").show();
-		$(".submit1").show();
-	});
-//allow user to highlight and store choice so they can submit it.===============================================
-	$(".answer").click(function(e) {
-		$(".answer").removeClass("userChoice");
-		$(this).addClass("userChoice");
-		$(".answer").css("background", "");
-		$(this).css("background", "#00A615");
-	});
-//when user clicks submit button show whether the user's answer was correct or not and ALERT for empty answers========================================
-	$(".submit1").click(function(e){
-		var userInput = $(".userChoice");
-		e.preventDefault();
-		if(userInput.length == 0) {
-			alert("You must click on an answer before you can submit!");
-			return false;
+//Questions Array=========================================
+
+var questions = [
+	{
+		image: "picture1",
+		question: "What are the words of House Stark?",
+		answer1: "Growing Stronger",
+		answer2: "Winter Is Coming",
+		answer3: "We Do Not Sow",
+		answer4: "Our's Is the Fury",
+		correct: "Winter Is Coming"
+	},
+
+	{
+		image: "picture2",
+		question: "What is the name of ancestral Valyrian sword given to Jon Snow?",
+		answer1: "Ice",
+		answer2: "Longclaw",
+		answer3: "Oathkeeper",
+		answer4: "Tywin Lannister",
+		correct: "Widow's Wail"
+	},
+
+	{
+		image: "picture3",
+		question: "Which King was commonly referred to as the 'Mad King'?",
+		answer1: "Robert Baratheon",
+		answer2: "Viserys Targaryen",
+		answer3: "Aerys II Targaryen",
+		answer4: "Tywin Lannister",
+		correct: "Aerys II Targaryen"
+	},
+
+	{
+		image: "picture4",
+		question: "What is the southern-most region of Westeros?",
+		answer1: "Dorne",
+		answer2: "The Reach",
+		answer3: "The Stormlands",
+		answer4: "The Vale",
+		correct: "Dorne"
+	},
+
+	{
+		image: "picture5",
+		question: "What is the impregnable castle located in the Vale called?",
+		answer1: "The Dreadfort",
+		answer2: "Castle Black",
+		answer3: "The Red Keep",
+		answer4: "The Eyrie",
+		correct: "The Eyrie"
+	},
+
+	{
+		image: "picture6",
+		question: "Which is NOT one of the names of Daenerys Targaryen's dragons?",
+		answer1: "Drogon",
+		answer2: "Balerion",
+		answer3: "Viserion",
+		answer4: "Rhaegal",
+		correct: "Balerion"
+	},
+
+	{
+		image: "picture7",
+		question: "What group is tasked with protecting Westeros from invasion beyond the Wall and the mythical 'White Walkers'?",
+		answer1: "The Kingsguard",
+		answer2: "The Second Sons",
+		answer3: "The Night's Watch",
+		answer4: "The City Watch",
+		correct: "The Night's Watch"
+	}
+];
+
+var kingdom = [
+	$(".north"),
+	$(".east"),
+	$(".rock"),
+	$(".riverlands"),
+	$(".dorne"),
+	$(".south"),
+	$(".stormlands")
+];
+
+//Game Functions==========================================
+
+function initQuestion(questions) {
+	$(".quiz-container").addClass(questions.image);
+	$(".question").text(questions.question);
+	$(".answer1").val(questions.answer1);
+	$(".answer2").val(questions.answer2);
+	$(".answer3").val(questions.answer3);
+	$(".answer4").val(questions.answer4);
+}
+
+function addKingdom() {
+	var currentKingdom = kingdom[questionCounter];
+	$(currentKingdom).show();
+}
+
+function checkAnswer() {
+	var userChoice = $(".userChoice");
+	var currentQuestion = questions[questionCounter];
+	if(userChoice.length == 0) {
+		alert("You must click on an answer before you can submit!");
+		return false;
+	}
+	if(userChoice.val() == currentQuestion.correct) {
+		$(".correct-overlay").fadeIn(500);
+		$(".next-button").show();
+		addKingdom();
+		correctScore++;
+	} else {
+		$(".incorrect-overlay").fadeIn(500);
+		$(".next-button").show();
 		}
-		if(userInput.hasClass("correct")) {
-			$(".correct-overlay").fadeIn(500);
-			$(".next-button").hide();
-			$(".next1").show();
-			$("#north").show();
-			correctScore++;
-		} else {
-			$(".incorrect-overlay").fadeIn(500);
-			$(".next-button").hide();
-			$(".next1").show();
-			}
-	});
-//Question 2: When user presses next question bring up the next question in order and increase the question counter.
-	$(".next1").click(function(e) {
-		e.preventDefault();
-		$(".answer").removeClass("userChoice");
-		$(".correct-overlay").fadeOut(500);
-		$(".incorrect-overlay").fadeOut(500);
-		$(".quiz-container").addClass("picture2");
-		$(".question").hide();
-		$(".choices").hide();
-		$(".submit").hide();
-		$(".q-two").show();
-		$(".two").show();
-		$(".submit2").show();
-		$('.counter').html(parseInt($('.counter').html(), 10)+1);
 		questionCounter++;
-	});
+}
 
-	$(".submit2").click(function(e){
-		e.preventDefault();
-		var userInput = $(".userChoice");
-		if(userInput.length == 0) {
-			alert("You must click on an answer before you can submit!");
-			return false;
-		}
-		if(userInput.hasClass("correct")) {
-			$(".correct-overlay").fadeIn(500);
-			$(".next-button").hide();
-			$(".next2").show();
-			$("#east").show();
-			correctScore++;
-		} else {
-			$(".incorrect-overlay").fadeIn(500);
-			$(".next-button").hide();
-			$(".next2").show();
-		}
-	});
-
-//Question 3: When user presses next question bring up the next question in order and increase the question counter.
-	$(".next2").click(function(e) {
-		e.preventDefault();
-		$(".answer").removeClass("userChoice");
-		$(".correct-overlay").fadeOut(500);
-		$(".incorrect-overlay").fadeOut(500);
-		$(".quiz-container").addClass("picture3");
-		$(".question").hide();
-		$(".choices").hide();
-		$(".submit").hide();
-		$(".q-three").show();
-		$(".three").show();
-		$(".submit3").show();
-		$('.counter').html(parseInt($('.counter').html(), 10)+1);
-		questionCounter++;
-	});
-
-	$(".submit3").click(function(e){
-		e.preventDefault();
-		var userInput = $(".userChoice");
-		if(userInput.length == 0) {
-			alert("You must click on an answer before you can submit!");
-			return false;
-		}
-		if(userInput.hasClass("correct")) {
-			$(".correct-overlay").fadeIn(500);
-			$(".next-button").hide();
-			$(".next3").show();
-			$("#rock").show();
-			correctScore++;
-		} else {
-			$(".incorrect-overlay").fadeIn(500);
-			$(".next-button").hide();
-			$(".next3").show();
-		}
-	});
-
-//Question 4: When user presses next question bring up the next question in order and increase the question counter.
-	$(".next3").click(function(e) {
-		e.preventDefault();
-		$(".answer").removeClass("userChoice");
-		$(".correct-overlay").fadeOut(500);
-		$(".incorrect-overlay").fadeOut(500);
-		$(".quiz-container").addClass("picture4");
-		$(".question").hide();
-		$(".choices").hide();
-		$(".submit").hide();
-		$(".q-four").show();
-		$(".four").show();
-		$(".submit4").show();
-		$('.counter').html(parseInt($('.counter').html(), 10)+1);
-		questionCounter++;
-	});
-
-	$(".submit4").click(function(e){
-		e.preventDefault();
-		var userInput = $(".userChoice");
-		if(userInput.length == 0) {
-			alert("You must click on an answer before you can submit!");
-			return false;
-		}
-		if(userInput.hasClass("correct")) {
-			$(".correct-overlay").fadeIn(500);
-			$(".next-button").hide();
-			$(".next4").show();
-			$("#riverlands").show();
-			correctScore++;
-		} else {
-			$(".incorrect-overlay").fadeIn(500);
-			$(".next-button").hide();
-			$(".next4").show();
-		}
-	});
-
-//Question 5: When user presses next question bring up the next question in order and increase the question counter.
-	$(".next4").click(function(e) {
-		e.preventDefault();
-		$(".answer").removeClass("userChoice");
-		$(".correct-overlay").fadeOut(500);
-		$(".incorrect-overlay").fadeOut(500);
-		$(".quiz-container").addClass("picture5");
-		$(".question").hide();
-		$(".choices").hide();
-		$(".submit").hide();
-		$(".q-five").show();
-		$(".five").show();
-		$(".submit5").show();
-		$('.counter').html(parseInt($('.counter').html(), 10)+1);
-		questionCounter++;
-	});
-
-	$(".submit5").click(function(e){
-		e.preventDefault();
-		var userInput = $(".userChoice");
-		if(userInput.length == 0) {
-			alert("You must click on an answer before you can submit!");
-			return false;
-		}
-		if(userInput.hasClass("correct")) {
-			$(".correct-overlay").fadeIn(500);
-			$(".next-button").hide();
-			$(".next5").show();
-			$("#dorne").show();
-			correctScore++;
-		} else {
-			$(".incorrect-overlay").fadeIn(500);
-			$(".next-button").hide();
-			$(".next5").show();
-		}
-	});
-
-//Question 6: When user presses next question bring up the next question in order and increase the question counter.
-	$(".next5").click(function(e) {
-		e.preventDefault();
-		$(".answer").removeClass("userChoice");
-		$(".correct-overlay").fadeOut(500);
-		$(".incorrect-overlay").fadeOut(500);
-		$(".quiz-container").addClass("picture6");
-		$(".question").hide();
-		$(".choices").hide();
-		$(".submit").hide();
-		$(".q-six").show();
-		$(".six").show();
-		$(".submit6").show();
-		$('.counter').html(parseInt($('.counter').html(), 10)+1);
-		questionCounter++;
-	});
-
-	$(".submit6").click(function(e){
-		e.preventDefault();
-		var userInput = $(".userChoice");
-		if(userInput.length == 0) {
-			alert("You must click on an answer before you can submit!");
-			return false;
-		}
-		if(userInput.hasClass("correct")) {
-			$(".correct-overlay").fadeIn(500);
-			$(".next-button").hide();
-			$(".next6").show();
-			$("#south").show();
-			correctScore++;
-		} else {
-			$(".incorrect-overlay").fadeIn(500);
-			$(".next-button").hide();
-			$(".next6").show();
-		}
-	});
-
-//Question 7: When user presses next question bring up the next question in order and increase the question counter.
-	$(".next6").click(function(e) {
-		e.preventDefault();
-		$(".answer").removeClass("userChoice");
-		$(".correct-overlay").fadeOut(500);
-		$(".incorrect-overlay").fadeOut(500);
-		$(".quiz-container").addClass("picture7");
-		$(".question").hide();
-		$(".choices").hide();
-		$(".submit").hide();
-		$(".q-seven").show();
-		$(".seven").show();
-		$(".submit7").show();
-		$('.counter').html(parseInt($('.counter').html(), 10)+1);
-		questionCounter++;
-	});
-
-	$(".submit7").click(function(e){
-		e.preventDefault();
-		var userInput = $(".userChoice");
-		if(userInput.length == 0) {
-			alert("You must click on an answer before you can submit!");
-			return false;
-		}
-		if(userInput.hasClass("correct")) {
-			$(".correct-overlay").fadeIn(500);
-			$(".next-button").hide();
-			$(".next7").show();
-			$("#stormlands").show();
-			correctScore++;
-		} else {
-			$(".incorrect-overlay").fadeIn(500);
-			$(".next-button").hide();
-			$(".next7").show();
-		}
-	});
-
-//Final Tally: When user presses next question bring up the next question in order and increase the question counter.
-	$(".next7").click(function(e) {
-		e.preventDefault();
+function finishGame() {
 		$(".answer").removeClass("userChoice");
 		$(".correct-overlay").fadeOut(500);
 		$(".incorrect-overlay").fadeOut(500);
@@ -279,6 +135,42 @@ var questionCounter = 0;
 		$(".score-container").hide();
 		$(".finish-button").show();
 		$(".correct-score").text(correctScore);
+}
+
+function nextQuestion() {
+	if(questionCounter > questions.length - 1) {
+		finishGame();
+	} else {
+		initQuestion(questions[questionCounter]);
+	}
+}
+
+//***THE GAME*** Question 1 of 7 appears and the user can begin quiz starting with Question number 1 and possible answers showing.
+	$("#start-button").click(function(e){
+		e.preventDefault();
+		$(".quiz-container").fadeIn(500);
+		initQuestion(questions[questionCounter]);
+	});
+//allow user to highlight and store choice so they can submit it.===============================================
+	$(".answer").click(function(e) {
+		$(".answer").removeClass("userChoice");
+		$(this).addClass("userChoice");
+		$(".answer").css("background", "");
+		$(this).css("background", "#00A615");
+	});
+//when user clicks submit button show whether the user's answer was correct or not and ALERT for empty answers========================================
+	$(".submit").click(function(e){
+		e.preventDefault();
+		checkAnswer();
+		$(".userChoice").removeClass("userChoice");
+	});
+//Question 2: When user presses next question bring up the next question in order and increase the question counter.
+	$(".next-button").click(function(e) {
+		e.preventDefault();
+		$(".correct-overlay").fadeOut(500);
+		$(".incorrect-overlay").fadeOut(500);
+		$('.counter').html(parseInt($('.counter').html(), 10)+1);
+		nextQuestion();
 	});
 
 //(FATE Screen/ResetButton) =============================
@@ -323,7 +215,6 @@ var questionCounter = 0;
 	$(".new").click(function(){
   window.location.reload();
 	});
-
 
 //(Instructions button)======================================
 //Instructions- when clicked; display instruction modal box

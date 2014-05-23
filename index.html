@@ -72,97 +72,37 @@
 			<p class="question-count">Question #<span class="counter">1</span> of 7:</p>
 			<a class="new" href="#">Reset</a>
 			<form class="quiz">
-				<p class="question q-one">What are the words of House Stark?</p>
-					<ul class="choices one">
-						<li><input type="button" class="answer" value="Growing Stronger"/></li>
-						<li><input type="button" class="answer" value="We Do Not Sow"/></li>
-						<li><input type="button" class="answer correct" value="Winter Is Coming"/></li>
-						<li><input type="button" class="answer" value="Our's Is the Fury"/></li>
+				<p class="question">{{question}}</p>
+					<ul class="choices">
+						<li><input type="button" class="answer answer1" value="{{answer1}}"/></li>
+						<li><input type="button" class="answer answer2" value="{{answer2}}"/></li>
+						<li><input type="button" class="answer answer3" value="{{answer3}}"/></li>
+						<li><input type="button" class="answer answer4" value="{{answer4}}"/></li>
 				  </ul>
 				  <input type="button" class="submit submit1" value="Submit">
-				<p class="question q-two">What is the name of ancestral Valyrian sword given to Jon Snow?</p>
-					<ul class="choices two">
-						<li><input type="button" class="answer" value="Ice"/></li>
-						<li><input type="button" class="answer correct" value="Longclaw"/></li>
-						<li><input type="button" class="answer" value="Oathkeeper"/></li>
-						<li><input type="button" class="answer" value="Widow's Wail"/></li>
-				  </ul>
-				  <input type="button" class="submit submit2" value="Submit">
-				<p class="question q-three">Which king was commonly referred to as the "Mad King"?</p>
-					<ul class="choices three">
-						<li><input type="button" class="answer" value="Robert Baratheon"/></li>
-						<li><input type="button" class="answer" value="Viserys Targaryen"/></li>
-						<li><input type="button" class="answer correct" value="Aerys II Targaryen"/></li>
-						<li><input type="button" class="answer" value="Tywin Lannister"/></li>
-				  </ul>
-				  <input type="button" class="submit submit3" value="Submit">
-				<p class="question q-four">What is the southern-most region of Westeros?</p>
-					<ul class="choices four">
-						<li><input type="button" class="answer correct" value="Dorne"/></li>
-						<li><input type="button" class="answer" value="The Reach"/></li>
-						<li><input type="button" class="answer" value="The Stormlands"/></li>
-						<li><input type="button" class="answer" value="The Vale"/></li>
-				  </ul>
-				  <input type="button" class="submit submit4" value="Submit">
-				<p class="question q-five">What is the impregnable castle located in the Vale called?</p>
-					<ul class="choices five">
-						<li><input type="button" class="answer" value="The Dreadfort"/></li>
-						<li><input type="button" class="answer" value="Castle Black"/></li>
-						<li><input type="button" class="answer" value="Red Keep"/></li>
-						<li><input type="button" class="answer correct" value="The Eyrie"/></li>
-				  </ul>
-				  <input type="button" class="submit submit5" value="Submit">
-				<p class="question q-six">Which is NOT one of the names of Daenerys Targaryen's dragons?</p>
-					<ul class="choices six">
-						<li><input type="button" class="answer wrong" value="Drogon"/></li>
-						<li><input type="button" class="answer correct" value="Balerion"/></li>
-						<li><input type="button" class="answer wrong" value="Viserion"/></li>
-						<li><input type="button" class="answer wrong" value="Rhaegal"/></li>
-				  </ul>
-				  <input type="button" class="submit submit6" value="Submit">
-				<p class="question q-seven">What group is tasked with protecting Westeros from invasion beyond the Wall and the mythical "White Walkers"?</p>
-					<ul class="choices seven">
-						<li><input type="button" class="answer" value="The Kingsgaurd"/></li>
-						<li><input type="button" class="answer" value="The Second Sons"/></li>
-						<li><input type="button" class="answer correct" value="The Night's Watch"/></li>
-						<li><input type="button" class="answer" value="The City Watch"/></li>
-				  </ul>
-					<input type="button" class="submit submit7" value="Submit">
 			</form><!-- end quiz -->
 			<div class="score-container">
 				<p>Kingdom's Conquered</p>
-				<img src="images/kingdom1.png" alt="correct" class="kingdom" id="north">
-				<img src="images/kingdom2.png" alt="correct" class="kingdom" id="east">
-				<img src="images/kingdom3.png" alt="correct" class="kingdom" id="rock">
-				<img src="images/kingdom4.png" alt="correct" class="kingdom" id="riverlands">
-				<img src="images/kingdom5.png" alt="correct" class="kingdom" id="dorne">
-				<img src="images/kingdom6.png" alt="correct" class="kingdom" id="south">
-				<img src="images/kingdom7.png" alt="correct" class="kingdom" id="stormlands">
+				<img src="images/kingdom1.png" alt="correct" class="kingdom north">
+				<img src="images/kingdom2.png" alt="correct" class="kingdom east">
+				<img src="images/kingdom3.png" alt="correct" class="kingdom rock">
+				<img src="images/kingdom4.png" alt="correct" class="kingdom riverlands">
+				<img src="images/kingdom5.png" alt="correct" class="kingdom dorne">
+				<img src="images/kingdom6.png" alt="correct" class="kingdom south">
+				<img src="images/kingdom7.png" alt="correct" class="kingdom stormlands">
 			</div><!-- end score-container -->
 		</div><!-- end quiz-container -->
 		<!-- Correct Modal -->
 		<div class="correct-overlay overlay same">
 			<h3>Correct!</h3>
 			<p>You Have Conquered One of the 7 Kingdom's!</p>
-			<input type="button" class="next-button next1" value="Next">
-			<input type="button" class="next-button next2" value="Next">
-			<input type="button" class="next-button next3" value="Next">
-			<input type="button" class="next-button next4" value="Next">
-			<input type="button" class="next-button next5" value="Next">
-			<input type="button" class="next-button next6" value="Next">
-			<input type="button" class="next-button next7" value="Score Total">
+			<input type="button" class="next-button" value="Next">
 		</div><!-- end correct overlay -->
 		<!-- Incorrect Modal -->
 		<div class="incorrect-overlay overlay same">
 			<h3>Wrong!</h3>
 			<p>This Battle is Lost... But Keep Going!</p>
-			<input type="button" class="next-button next1" value="Next">
-			<input type="button" class="next-button next2" value="Next">
-			<input type="button" class="next-button next3" value="Next">
-			<input type="button" class="next-button next4" value="Next">
-			<input type="button" class="next-button next5" value="Next">
-			<input type="button" class="next-button next6" value="Next">
-			<input type="button" class="next-button next7" value="Score Total">
+			<input type="button" class="next-button" value="Next">
 		</div><!-- end incorrect overlay -->
 		<!-- Final Modal -->
 		<div class="final-overlay overlay same">
