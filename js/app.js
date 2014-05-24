@@ -143,7 +143,7 @@ Question 1 of 7 appears and the user can begin quiz starting with Question numbe
 ========================================================*/
 	$("#start-button").click(function(e){
 		e.preventDefault();
-		$(".quiz-container").fadeIn(500);
+		$(".quiz-container").show();
 		initQuestion(questions[questionCounter]);
 	});
 //allow user to highlight and store choice so they can submit it.===============================================
@@ -176,7 +176,7 @@ Question 1 of 7 appears and the user can begin quiz starting with Question numbe
 			$(".score-container").show();
 			$(".next-button").show();
 			$(".quiz-container").addClass("fate1");
-			$(".moon-door").fadeIn(500);
+			$(".moon-door").show();
 		} else if(correctScore <= 4)  {
 			$(".final-overlay").fadeOut(500);
 			$(".finish-button").hide();
@@ -184,7 +184,7 @@ Question 1 of 7 appears and the user can begin quiz starting with Question numbe
 			$(".score-container").show();
 			$(".next-button").show();
 			$(".quiz-container").addClass("fate2");
-			$(".nights-watch").fadeIn(500);
+			$(".nights-watch").show();
 		} else if(correctScore <= 6)  {
 			$(".final-overlay").fadeOut(500);
 			$(".finish-button").hide();
@@ -192,7 +192,7 @@ Question 1 of 7 appears and the user can begin quiz starting with Question numbe
 		  $(".score-container").show();
 		  $(".next-button").show();
 			$(".quiz-container").addClass("fate3");
-			$(".kingsguard").fadeIn(500);
+			$(".kingsguard").show();
 		} else if(correctScore == 7)  {
 			$(".final-overlay").fadeOut(500);
 			$(".finish-button").hide();
@@ -200,7 +200,7 @@ Question 1 of 7 appears and the user can begin quiz starting with Question numbe
 			$(".score-container").show();
 			$(".next-button").show();
 			$(".quiz-container").addClass("fate4");
-			$(".winner").fadeIn(500);
+			$(".winner").show();
 		}
 	});
 //(NEW GAME button) =================================
