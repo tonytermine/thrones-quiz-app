@@ -3,7 +3,6 @@ $(document).ready(function() {
 var correctScore = 0;
 var questionCounter = 0;
 //Questions Array=========================================
-
 var questions = [
 	{
 		image: "picture1",
@@ -14,17 +13,15 @@ var questions = [
 		answer4: "Our's Is the Fury",
 		correct: "Winter Is Coming"
 	},
-
 	{
 		image: "picture2",
 		question: "What is the name of ancestral Valyrian sword given to Jon Snow?",
 		answer1: "Ice",
 		answer2: "Longclaw",
 		answer3: "Oathkeeper",
-		answer4: "Tywin Lannister",
-		correct: "Widow's Wail"
+		answer4: "Widow's Wail",
+		correct: "Longclaw"
 	},
-
 	{
 		image: "picture3",
 		question: "Which King was commonly referred to as the 'Mad King'?",
@@ -34,7 +31,6 @@ var questions = [
 		answer4: "Tywin Lannister",
 		correct: "Aerys II Targaryen"
 	},
-
 	{
 		image: "picture4",
 		question: "What is the southern-most region of Westeros?",
@@ -44,7 +40,6 @@ var questions = [
 		answer4: "The Vale",
 		correct: "Dorne"
 	},
-
 	{
 		image: "picture5",
 		question: "What is the impregnable castle located in the Vale called?",
@@ -54,7 +49,6 @@ var questions = [
 		answer4: "The Eyrie",
 		correct: "The Eyrie"
 	},
-
 	{
 		image: "picture6",
 		question: "Which is NOT one of the names of Daenerys Targaryen's dragons?",
@@ -64,7 +58,6 @@ var questions = [
 		answer4: "Rhaegal",
 		correct: "Balerion"
 	},
-
 	{
 		image: "picture7",
 		question: "What group is tasked with protecting Westeros from invasion beyond the Wall and the mythical 'White Walkers'?",
@@ -75,7 +68,7 @@ var questions = [
 		correct: "The Night's Watch"
 	}
 ];
-
+//Score Container Array===================================
 var kingdom = [
 	$(".north"),
 	$(".east"),
@@ -85,9 +78,7 @@ var kingdom = [
 	$(".south"),
 	$(".stormlands")
 ];
-
 //Game Functions==========================================
-
 function initQuestion(questions) {
 	$(".quiz-container").addClass(questions.image);
 	$(".question").text(questions.question);
@@ -118,11 +109,14 @@ function checkAnswer() {
 		$(".incorrect-overlay").fadeIn(500);
 		$(".next-button").show();
 		}
+		$(".userChoice").removeClass("userChoice");
+		$(".answer").css("background", "");
 		questionCounter++;
 }
 
 function finishGame() {
 		$(".answer").removeClass("userChoice");
+		$(".answer").css("background", "");
 		$(".correct-overlay").fadeOut(500);
 		$(".incorrect-overlay").fadeOut(500);
 		$(".quiz-container").addClass("picture8");
@@ -144,8 +138,9 @@ function nextQuestion() {
 		initQuestion(questions[questionCounter]);
 	}
 }
-
-//***THE GAME*** Question 1 of 7 appears and the user can begin quiz starting with Question number 1 and possible answers showing.
+/***THE GAME***===========================================
+Question 1 of 7 appears and the user can begin quiz starting with Question number 1 and possible answers showing.
+========================================================*/
 	$("#start-button").click(function(e){
 		e.preventDefault();
 		$(".quiz-container").fadeIn(500);
@@ -162,9 +157,8 @@ function nextQuestion() {
 	$(".submit").click(function(e){
 		e.preventDefault();
 		checkAnswer();
-		$(".userChoice").removeClass("userChoice");
 	});
-//Question 2: When user presses next question bring up the next question in order and increase the question counter.
+//Next Question: When user presses next question bring up the next question in order and increase the question counter.
 	$(".next-button").click(function(e) {
 		e.preventDefault();
 		$(".correct-overlay").fadeOut(500);
@@ -172,7 +166,6 @@ function nextQuestion() {
 		$('.counter').html(parseInt($('.counter').html(), 10)+1);
 		nextQuestion();
 	});
-
 //(FATE Screen/ResetButton) =============================
 	$(".finish-button").click(function(e){
 		e.preventDefault();
@@ -210,21 +203,17 @@ function nextQuestion() {
 			$(".winner").fadeIn(500);
 		}
 	});
-
 //(NEW GAME button) =================================
 	$(".new").click(function(){
   window.location.reload();
 	});
-
 //(Instructions button)======================================
 //Instructions- when clicked; display instruction modal box
 	$(".what").click(function() {
 		$(".instruction-overlay").fadeIn(500);
-
 	});
 	//Hide information modal box
 	$(".close-button").click(function() {
 		$(".instruction-overlay").fadeOut(500);
 	});
-
 });
